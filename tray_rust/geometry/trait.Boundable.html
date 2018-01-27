@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `Boundable` trait in crate `tray_rust`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Boundable">
+
+    <title>tray_rust::geometry::Boundable - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css" id="mainThemeStyle">
+    
+    <link rel="stylesheet" type="text/css" href="../../dark.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css" id="themeStyle">
+    <script src="../../storage.js"></script>
+    
+
+    
+    
+</head>
+<body class="rustdoc trait">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        <div class="sidebar-menu">&#9776;</div>
+        
+        <p class='location'>Trait Boundable</p><div class="sidebar-elems"><div class="block items"><a class="sidebar-title" href="#required-methods">Required Methods</a><div class="sidebar-links"><a href="#tymethod.bounds">bounds</a></div><a class="sidebar-title" href="#provided-methods">Provided Methods</a><div class="sidebar-links"><a href="#method.update_deformation">update_deformation</a></div><a class="sidebar-title" href="#implementors">Implementors</a></div><p class='location'><a href='../index.html'>tray_rust</a>::<wbr><a href='index.html'>geometry</a></p><script>window.sidebarCurrent = {name: 'Boundable', ty: 'trait', relpath: ''};</script><script defer src="sidebar-items.js"></script></div>
+    </nav>
+
+    <div class="theme-picker">
+        <button id="theme-picker" aria-label="Pick another theme!">
+            <img src="../../brush.svg" width="18" alt="Pick another theme!">
+        </button>
+        <div id="theme-choices"></div>
+    </div>
+    <script src="../../theme.js"></script>
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Trait <a href='../index.html'>tray_rust</a>::<wbr><a href='index.html'>geometry</a>::<wbr><a class="trait" href=''>Boundable</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../src/tray_rust/geometry/mod.rs.html#65-74' title='goto source code'>[src]</a></span></h1>
+<pre class='rust trait'>pub trait Boundable {
+    fn <a href='#tymethod.bounds' class='fnname'>bounds</a>(&amp;self, start: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a>, end: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a>) -&gt; <a class="struct" href="../../tray_rust/geometry/bbox/struct.BBox.html" title="struct tray_rust::geometry::bbox::BBox">BBox</a>;
+
+    fn <a href='#method.update_deformation' class='fnname'>update_deformation</a>(&amp;mut self, start: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a>, end: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a>) { ... }
+}</pre><div class='docblock'><p>Trait implemented by scene objects that can report an AABB describing their bounds</p>
+</div>
+            <h2 id='required-methods' class='small-section-header'>
+              Required Methods<a href='#required-methods' class='anchor'></a>
+            </h2>
+            <div class='methods'>
+        <h3 id='tymethod.bounds' class='method'><span id='bounds.v' class='invisible'><code>fn <a href='#tymethod.bounds' class='fnname'>bounds</a>(&amp;self, start: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a>, end: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a>) -&gt; <a class="struct" href="../../tray_rust/geometry/bbox/struct.BBox.html" title="struct tray_rust::geometry::bbox::BBox">BBox</a></code></span></h3><div class='docblock'><p>Get an AABB reporting the object's bounds over the time period
+The default implementation assumes the object isn't animated and
+simply returns its bounds. This is kind of a hack to use
+the BVH for animated geomtry (instances) and non-animated geometry (triangles).</p>
+</div></div>
+            <h2 id='provided-methods' class='small-section-header'>
+              Provided Methods<a href='#provided-methods' class='anchor'></a>
+            </h2>
+            <div class='methods'>
+        <h3 id='method.update_deformation' class='method'><span id='update_deformation.v' class='invisible'><code>fn <a href='#method.update_deformation' class='fnname'>update_deformation</a>(&amp;mut self, start: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a>, end: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a>)</code></span></h3><div class='docblock'><p>Have the object recompute its bounds for the time range. In the case
+of deforming geometry this can rebuild acceleration structures for example.</p>
+</div></div>
+        <h2 id='implementors' class='small-section-header'>
+          Implementors<a href='#implementors' class='anchor'></a>
+        </h2>
+        <ul class='item-list' id='implementors-list'>
+    <li><div class='out-of-band'><a class='srclink' href='../../src/tray_rust/geometry/instance.rs.html#129-136' title='goto source code'>[src]</a></div><code>impl Boundable for <a class="enum" href="../../tray_rust/geometry/instance/enum.Instance.html" title="enum tray_rust::geometry::instance::Instance">Instance</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../src/tray_rust/geometry/sphere.rs.html#84-89' title='goto source code'>[src]</a></div><code>impl Boundable for <a class="struct" href="../../tray_rust/geometry/sphere/struct.Sphere.html" title="struct tray_rust::geometry::sphere::Sphere">Sphere</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../src/tray_rust/geometry/disk.rs.html#78-82' title='goto source code'>[src]</a></div><code>impl Boundable for <a class="struct" href="../../tray_rust/geometry/disk/struct.Disk.html" title="struct tray_rust::geometry::disk::Disk">Disk</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../src/tray_rust/geometry/rectangle.rs.html#66-72' title='goto source code'>[src]</a></div><code>impl Boundable for <a class="struct" href="../../tray_rust/geometry/rectangle/struct.Rectangle.html" title="struct tray_rust::geometry::rectangle::Rectangle">Rectangle</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../src/tray_rust/geometry/bvh.rs.html#270-274' title='goto source code'>[src]</a></div><code>impl&lt;T:&nbsp;<a class="trait" href="../../tray_rust/geometry/trait.Boundable.html" title="trait tray_rust::geometry::Boundable">Boundable</a>&gt; Boundable for <a class="struct" href="../../tray_rust/geometry/bvh/struct.BVH.html" title="struct tray_rust::geometry::bvh::BVH">BVH</a>&lt;T&gt;</code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../src/tray_rust/geometry/mesh.rs.html#87-91' title='goto source code'>[src]</a></div><code>impl Boundable for <a class="struct" href="../../tray_rust/geometry/mesh/struct.Mesh.html" title="struct tray_rust::geometry::mesh::Mesh">Mesh</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../src/tray_rust/geometry/mesh.rs.html#128-134' title='goto source code'>[src]</a></div><code>impl Boundable for <a class="struct" href="../../tray_rust/geometry/mesh/struct.Triangle.html" title="struct tray_rust::geometry::mesh::Triangle">Triangle</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../src/tray_rust/geometry/animated_mesh.rs.html#136-143' title='goto source code'>[src]</a></div><code>impl Boundable for <a class="struct" href="../../tray_rust/geometry/animated_mesh/struct.AnimatedMesh.html" title="struct tray_rust::geometry::animated_mesh::AnimatedMesh">AnimatedMesh</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../src/tray_rust/geometry/animated_mesh.rs.html#176-185' title='goto source code'>[src]</a></div><code>impl Boundable for <a class="struct" href="../../tray_rust/geometry/animated_mesh/struct.AnimatedTriangle.html" title="struct tray_rust::geometry::animated_mesh::AnimatedTriangle">AnimatedTriangle</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../src/tray_rust/geometry/receiver.rs.html#54-58' title='goto source code'>[src]</a></div><code>impl Boundable for <a class="struct" href="../../tray_rust/geometry/receiver/struct.Receiver.html" title="struct tray_rust::geometry::receiver::Receiver">Receiver</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../src/tray_rust/geometry/emitter.rs.html#153-162' title='goto source code'>[src]</a></div><code>impl Boundable for <a class="struct" href="../../tray_rust/geometry/emitter/struct.Emitter.html" title="struct tray_rust::geometry::emitter::Emitter">Emitter</a></code></li>
+</ul><script type="text/javascript" async
+                         src="../../implementors/tray_rust/geometry/trait.Boundable.js">
+                 </script></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt><kbd>?</kbd></dt>
+                    <dd>Show this help dialog</dd>
+                    <dt><kbd>S</kbd></dt>
+                    <dd>Focus the search field</dd>
+                    <dt><kbd>↑</kbd></dt>
+                    <dd>Move up in search results</dd>
+                    <dt><kbd>↓</kbd></dt>
+                    <dd>Move down in search results</dd>
+                    <dt><kbd>↹</kbd></dt>
+                    <dd>Switch tab</dd>
+                    <dt><kbd>&#9166;</kbd></dt>
+                    <dd>Go to active search result</dd>
+                    <dt><kbd>+</kbd></dt>
+                    <dd>Expand all sections</dd>
+                    <dt><kbd>-</kbd></dt>
+                    <dd>Collapse all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "tray_rust";
+    </script>
+    <script src="../../main.js"></script>
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

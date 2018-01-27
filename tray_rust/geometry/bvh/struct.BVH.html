@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `BVH` struct in crate `tray_rust`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, BVH">
+
+    <title>tray_rust::geometry::bvh::BVH - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../../rustdoc.css" id="mainThemeStyle">
+    
+    <link rel="stylesheet" type="text/css" href="../../../dark.css">
+    <link rel="stylesheet" type="text/css" href="../../../main.css" id="themeStyle">
+    <script src="../../../storage.js"></script>
+    
+
+    
+    
+</head>
+<body class="rustdoc struct">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        <div class="sidebar-menu">&#9776;</div>
+        
+        <p class='location'>Struct BVH</p><div class="sidebar-elems"><div class="block items"><a class="sidebar-title" href="#methods">Methods</a><div class="sidebar-links"><a href="#method.unanimated">unanimated</a><a href="#method.new">new</a><a href="#method.rebuild">rebuild</a><a href="#method.intersect">intersect</a><a href="#method.iter">iter</a></div><a class="sidebar-title" href="#implementations">Trait Implementations</a><div class="sidebar-links"><a href="#impl-Boundable">Boundable</a></div></div><p class='location'><a href='../../index.html'>tray_rust</a>::<wbr><a href='../index.html'>geometry</a>::<wbr><a href='index.html'>bvh</a></p><script>window.sidebarCurrent = {name: 'BVH', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script></div>
+    </nav>
+
+    <div class="theme-picker">
+        <button id="theme-picker" aria-label="Pick another theme!">
+            <img src="../../../brush.svg" width="18" alt="Pick another theme!">
+        </button>
+        <div id="theme-choices"></div>
+    </div>
+    <script src="../../../theme.js"></script>
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../../index.html'>tray_rust</a>::<wbr><a href='../index.html'>geometry</a>::<wbr><a href='index.html'>bvh</a>::<wbr><a class="struct" href=''>BVH</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../../src/tray_rust/geometry/bvh.rs.html#13-25' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct BVH&lt;T:&nbsp;<a class="trait" href="../../../tray_rust/geometry/trait.Boundable.html" title="trait tray_rust::geometry::Boundable">Boundable</a>&gt; { /* fields omitted */ }</pre><div class='docblock'><p>A standard BVH2 that stores objects that can report their bounds in some space
+via the <code>Boundable</code> trait. The BVH is constructed using a SAH partitioning scheme</p>
+</div>
+                    <h2 id='methods' class='small-section-header'>
+                      Methods<a href='#methods' class='anchor'></a>
+                    </h2>
+                <h3 id='impl' class='impl'><span class='in-band'><code>impl&lt;T:&nbsp;<a class="trait" href="../../../tray_rust/geometry/trait.Boundable.html" title="trait tray_rust::geometry::Boundable">Boundable</a>&gt; <a class="struct" href="../../../tray_rust/geometry/bvh/struct.BVH.html" title="struct tray_rust::geometry::bvh::BVH">BVH</a>&lt;T&gt;</code><a href='#impl' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/tray_rust/geometry/bvh.rs.html#27-268' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.unanimated' class="method"><span id='unanimated.v' class='invisible'><code>pub fn <a href='#method.unanimated' class='fnname'>unanimated</a>(max_geom: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a>, geometry: <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/vec/struct.Vec.html" title="struct alloc::vec::Vec">Vec</a>&lt;T&gt;) -&gt; <a class="struct" href="../../../tray_rust/geometry/bvh/struct.BVH.html" title="struct tray_rust::geometry::bvh::BVH">BVH</a>&lt;T&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/tray_rust/geometry/bvh.rs.html#29-31' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Create a new non-animated BVH holding the geometry</p>
+</div><h4 id='method.new' class="method"><span id='new.v' class='invisible'><code>pub fn <a href='#method.new' class='fnname'>new</a>(max_geom: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a>, geometry: <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/vec/struct.Vec.html" title="struct alloc::vec::Vec">Vec</a>&lt;T&gt;, start: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a>, end: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a>) -&gt; <a class="struct" href="../../../tray_rust/geometry/bvh/struct.BVH.html" title="struct tray_rust::geometry::bvh::BVH">BVH</a>&lt;T&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/tray_rust/geometry/bvh.rs.html#34-59' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Create a new BVH using a SAH construction algorithm which holds the scene
+geometry for some time period.</p>
+</div><h4 id='method.rebuild' class="method"><span id='rebuild.v' class='invisible'><code>pub fn <a href='#method.rebuild' class='fnname'>rebuild</a>(&amp;mut self, start: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a>, end: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a>)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/tray_rust/geometry/bvh.rs.html#61-78' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Re-build the BVH for the time range passed</p>
+</div><h4 id='method.intersect' class="method"><span id='intersect.v' class='invisible'><code>pub fn <a href='#method.intersect' class='fnname'>intersect</a>&lt;'a, F, R&gt;(&amp;'a self, ray: &amp;mut <a class="struct" href="../../../tray_rust/linalg/ray/struct.Ray.html" title="struct tray_rust::linalg::ray::Ray">Ray</a>, f: F) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;R&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.Fn.html" title="trait core::ops::function::Fn">Fn</a>(&amp;mut <a class="struct" href="../../../tray_rust/linalg/ray/struct.Ray.html" title="struct tray_rust::linalg::ray::Ray">Ray</a>, <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;'a </a>T) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;R&gt;,&nbsp;</span></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/tray_rust/geometry/bvh.rs.html#81-130' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Traverse the BVH and call the function passed on the objects in the leaf nodes
+of the BVH, returning the value returned by the function after traversal completes</p>
+</div><h4 id='method.iter' class="method"><span id='iter.v' class='invisible'><code>pub fn <a href='#method.iter' class='fnname'>iter</a>(&amp;self) -&gt; <a class="struct" href="https://doc.rust-lang.org/nightly/core/slice/struct.Iter.html" title="struct core::slice::Iter">Iter</a>&lt;T&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/tray_rust/geometry/bvh.rs.html#131-133' title='goto source code'>[src]</a></span></h4>
+</div>
+            <h2 id='implementations' class='small-section-header'>
+              Trait Implementations<a href='#implementations' class='anchor'></a>
+            </h2>
+        <h3 id='impl-Boundable' class='impl'><span class='in-band'><code>impl&lt;T:&nbsp;<a class="trait" href="../../../tray_rust/geometry/trait.Boundable.html" title="trait tray_rust::geometry::Boundable">Boundable</a>&gt; <a class="trait" href="../../../tray_rust/geometry/trait.Boundable.html" title="trait tray_rust::geometry::Boundable">Boundable</a> for <a class="struct" href="../../../tray_rust/geometry/bvh/struct.BVH.html" title="struct tray_rust::geometry::bvh::BVH">BVH</a>&lt;T&gt;</code><a href='#impl-Boundable' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/tray_rust/geometry/bvh.rs.html#270-274' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.bounds' class="method"><span id='bounds.v' class='invisible'><code>fn <a href='../../../tray_rust/geometry/trait.Boundable.html#tymethod.bounds' class='fnname'>bounds</a>(&amp;self, _: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a>, _: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a>) -&gt; <a class="struct" href="../../../tray_rust/geometry/bbox/struct.BBox.html" title="struct tray_rust::geometry::bbox::BBox">BBox</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/tray_rust/geometry/bvh.rs.html#271-273' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Get an AABB reporting the object's bounds over the time period The default implementation assumes the object isn't animated and simply returns its bounds. This is kind of a hack to use the BVH for animated geomtry (instances) and non-animated geometry (triangles). <a href="../../../tray_rust/geometry/trait.Boundable.html#tymethod.bounds">Read more</a></p>
+</div><h4 id='method.update_deformation' class="method"><span id='update_deformation.v' class='invisible'><code>fn <a href='../../../tray_rust/geometry/trait.Boundable.html#method.update_deformation' class='fnname'>update_deformation</a>(&amp;mut self, start: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a>, end: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a>)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/tray_rust/geometry/mod.rs.html#73' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Have the object recompute its bounds for the time range. In the case of deforming geometry this can rebuild acceleration structures for example. <a href="../../../tray_rust/geometry/trait.Boundable.html#method.update_deformation">Read more</a></p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt><kbd>?</kbd></dt>
+                    <dd>Show this help dialog</dd>
+                    <dt><kbd>S</kbd></dt>
+                    <dd>Focus the search field</dd>
+                    <dt><kbd>↑</kbd></dt>
+                    <dd>Move up in search results</dd>
+                    <dt><kbd>↓</kbd></dt>
+                    <dd>Move down in search results</dd>
+                    <dt><kbd>↹</kbd></dt>
+                    <dd>Switch tab</dd>
+                    <dt><kbd>&#9166;</kbd></dt>
+                    <dd>Go to active search result</dd>
+                    <dt><kbd>+</kbd></dt>
+                    <dd>Expand all sections</dd>
+                    <dt><kbd>-</kbd></dt>
+                    <dd>Collapse all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../../";
+        window.currentCrate = "tray_rust";
+    </script>
+    <script src="../../../main.js"></script>
+    <script defer src="../../../search-index.js"></script>
+</body>
+</html>

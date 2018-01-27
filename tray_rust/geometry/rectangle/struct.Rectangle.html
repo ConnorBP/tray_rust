@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `Rectangle` struct in crate `tray_rust`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Rectangle">
+
+    <title>tray_rust::geometry::rectangle::Rectangle - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../../rustdoc.css" id="mainThemeStyle">
+    
+    <link rel="stylesheet" type="text/css" href="../../../dark.css">
+    <link rel="stylesheet" type="text/css" href="../../../main.css" id="themeStyle">
+    <script src="../../../storage.js"></script>
+    
+
+    
+    
+</head>
+<body class="rustdoc struct">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        <div class="sidebar-menu">&#9776;</div>
+        
+        <p class='location'>Struct Rectangle</p><div class="sidebar-elems"><div class="block items"><a class="sidebar-title" href="#methods">Methods</a><div class="sidebar-links"><a href="#method.new">new</a></div><a class="sidebar-title" href="#implementations">Trait Implementations</a><div class="sidebar-links"><a href="#impl-Clone">Clone</a><a href="#impl-Copy">Copy</a><a href="#impl-Geometry">Geometry</a><a href="#impl-Boundable">Boundable</a><a href="#impl-Sampleable">Sampleable</a></div></div><p class='location'><a href='../../index.html'>tray_rust</a>::<wbr><a href='../index.html'>geometry</a>::<wbr><a href='index.html'>rectangle</a></p><script>window.sidebarCurrent = {name: 'Rectangle', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script></div>
+    </nav>
+
+    <div class="theme-picker">
+        <button id="theme-picker" aria-label="Pick another theme!">
+            <img src="../../../brush.svg" width="18" alt="Pick another theme!">
+        </button>
+        <div id="theme-choices"></div>
+    </div>
+    <script src="../../../theme.js"></script>
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../../index.html'>tray_rust</a>::<wbr><a href='../index.html'>geometry</a>::<wbr><a href='index.html'>rectangle</a>::<wbr><a class="struct" href=''>Rectangle</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../../src/tray_rust/geometry/rectangle.rs.html#25-28' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct Rectangle { /* fields omitted */ }</pre><div class='docblock'><p>A rectangle centered at the origin spanning [-width / 2, -height / 2]
+to [width / 2, height / 2] with a normal along [0, 0, 1]</p>
+</div>
+                    <h2 id='methods' class='small-section-header'>
+                      Methods<a href='#methods' class='anchor'></a>
+                    </h2>
+                <h3 id='impl' class='impl'><span class='in-band'><code>impl <a class="struct" href="../../../tray_rust/geometry/rectangle/struct.Rectangle.html" title="struct tray_rust::geometry::rectangle::Rectangle">Rectangle</a></code><a href='#impl' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/tray_rust/geometry/rectangle.rs.html#30-35' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new' class="method"><span id='new.v' class='invisible'><code>pub fn <a href='#method.new' class='fnname'>new</a>(width: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a>, height: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a>) -&gt; <a class="struct" href="../../../tray_rust/geometry/rectangle/struct.Rectangle.html" title="struct tray_rust::geometry::rectangle::Rectangle">Rectangle</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/tray_rust/geometry/rectangle.rs.html#32-34' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Create a new rectangle with the desired width and height</p>
+</div></div>
+            <h2 id='implementations' class='small-section-header'>
+              Trait Implementations<a href='#implementations' class='anchor'></a>
+            </h2>
+        <h3 id='impl-Clone' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html" title="trait core::clone::Clone">Clone</a> for <a class="struct" href="../../../tray_rust/geometry/rectangle/struct.Rectangle.html" title="struct tray_rust::geometry::rectangle::Rectangle">Rectangle</a></code><a href='#impl-Clone' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/tray_rust/geometry/rectangle.rs.html#24' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.clone' class="method"><span id='clone.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class="struct" href="../../../tray_rust/geometry/rectangle/struct.Rectangle.html" title="struct tray_rust::geometry::rectangle::Rectangle">Rectangle</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/tray_rust/geometry/rectangle.rs.html#24' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns a copy of the value. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone">Read more</a></p>
+</div><h4 id='method.clone_from' class="method"><span id='clone_from.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self)</code></span><span class='out-of-band'><div class='ghost'></div><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div><a class='srclink' href='https://doc.rust-lang.org/nightly/src/core/clone.rs.html#112-114' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Performs copy-assignment from <code>source</code>. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from">Read more</a></p>
+</div></div><h3 id='impl-Copy' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Copy.html" title="trait core::marker::Copy">Copy</a> for <a class="struct" href="../../../tray_rust/geometry/rectangle/struct.Rectangle.html" title="struct tray_rust::geometry::rectangle::Rectangle">Rectangle</a></code><a href='#impl-Copy' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/tray_rust/geometry/rectangle.rs.html#24' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'></div><h3 id='impl-Geometry' class='impl'><span class='in-band'><code>impl <a class="trait" href="../../../tray_rust/geometry/trait.Geometry.html" title="trait tray_rust::geometry::Geometry">Geometry</a> for <a class="struct" href="../../../tray_rust/geometry/rectangle/struct.Rectangle.html" title="struct tray_rust::geometry::rectangle::Rectangle">Rectangle</a></code><a href='#impl-Geometry' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/tray_rust/geometry/rectangle.rs.html#37-64' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.intersect' class="method"><span id='intersect.v' class='invisible'><code>fn <a href='../../../tray_rust/geometry/trait.Geometry.html#tymethod.intersect' class='fnname'>intersect</a>(&amp;self, ray: &amp;mut <a class="struct" href="../../../tray_rust/linalg/ray/struct.Ray.html" title="struct tray_rust::linalg::ray::Ray">Ray</a>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../../../tray_rust/geometry/differential_geometry/struct.DifferentialGeometry.html" title="struct tray_rust::geometry::differential_geometry::DifferentialGeometry">DifferentialGeometry</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/tray_rust/geometry/rectangle.rs.html#38-63' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Test a ray for intersection with the geometry. The ray should have been previously transformed into the geometry's object space otherwise the test will be incorrect. Returns the differential geometry containing the hit information if the ray hit the object and set's the ray's <code>max_t</code> member accordingly <a href="../../../tray_rust/geometry/trait.Geometry.html#tymethod.intersect">Read more</a></p>
+</div></div><h3 id='impl-Boundable' class='impl'><span class='in-band'><code>impl <a class="trait" href="../../../tray_rust/geometry/trait.Boundable.html" title="trait tray_rust::geometry::Boundable">Boundable</a> for <a class="struct" href="../../../tray_rust/geometry/rectangle/struct.Rectangle.html" title="struct tray_rust::geometry::rectangle::Rectangle">Rectangle</a></code><a href='#impl-Boundable' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/tray_rust/geometry/rectangle.rs.html#66-72' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.bounds' class="method"><span id='bounds.v' class='invisible'><code>fn <a href='../../../tray_rust/geometry/trait.Boundable.html#tymethod.bounds' class='fnname'>bounds</a>(&amp;self, _: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a>, _: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a>) -&gt; <a class="struct" href="../../../tray_rust/geometry/bbox/struct.BBox.html" title="struct tray_rust::geometry::bbox::BBox">BBox</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/tray_rust/geometry/rectangle.rs.html#67-71' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Get an AABB reporting the object's bounds over the time period The default implementation assumes the object isn't animated and simply returns its bounds. This is kind of a hack to use the BVH for animated geomtry (instances) and non-animated geometry (triangles). <a href="../../../tray_rust/geometry/trait.Boundable.html#tymethod.bounds">Read more</a></p>
+</div><h4 id='method.update_deformation' class="method"><span id='update_deformation.v' class='invisible'><code>fn <a href='../../../tray_rust/geometry/trait.Boundable.html#method.update_deformation' class='fnname'>update_deformation</a>(&amp;mut self, start: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a>, end: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a>)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/tray_rust/geometry/mod.rs.html#73' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Have the object recompute its bounds for the time range. In the case of deforming geometry this can rebuild acceleration structures for example. <a href="../../../tray_rust/geometry/trait.Boundable.html#method.update_deformation">Read more</a></p>
+</div></div><h3 id='impl-Sampleable' class='impl'><span class='in-band'><code>impl <a class="trait" href="../../../tray_rust/geometry/trait.Sampleable.html" title="trait tray_rust::geometry::Sampleable">Sampleable</a> for <a class="struct" href="../../../tray_rust/geometry/rectangle/struct.Rectangle.html" title="struct tray_rust::geometry::rectangle::Rectangle">Rectangle</a></code><a href='#impl-Sampleable' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/tray_rust/geometry/rectangle.rs.html#74-105' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.sample_uniform' class="method"><span id='sample_uniform.v' class='invisible'><code>fn <a href='../../../tray_rust/geometry/trait.Sampleable.html#tymethod.sample_uniform' class='fnname'>sample_uniform</a>(&amp;self, samples: &amp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">(</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a>, <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">)</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">(</a><a class="struct" href="../../../tray_rust/linalg/point/struct.Point.html" title="struct tray_rust::linalg::point::Point">Point</a>, <a class="struct" href="../../../tray_rust/linalg/normal/struct.Normal.html" title="struct tray_rust::linalg::normal::Normal">Normal</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">)</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/tray_rust/geometry/rectangle.rs.html#77-80' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Uniform sampling for a rect is simple: just scale the two samples into the
+rectangle's space and return them as the x,y coordinates of the point chosen</p>
+</div><h4 id='method.sample' class="method"><span id='sample.v' class='invisible'><code>fn <a href='../../../tray_rust/geometry/trait.Sampleable.html#tymethod.sample' class='fnname'>sample</a>(&amp;self, _: &amp;<a class="struct" href="../../../tray_rust/linalg/point/struct.Point.html" title="struct tray_rust::linalg::point::Point">Point</a>, samples: &amp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">(</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a>, <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">)</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">(</a><a class="struct" href="../../../tray_rust/linalg/point/struct.Point.html" title="struct tray_rust::linalg::point::Point">Point</a>, <a class="struct" href="../../../tray_rust/linalg/normal/struct.Normal.html" title="struct tray_rust::linalg::normal::Normal">Normal</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">)</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/tray_rust/geometry/rectangle.rs.html#81-83' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Sample the object using the probability density of the solid angle from <code>p</code> to the sampled point on the surface. Returns the sampled point and the surface normal at that point <a href="../../../tray_rust/geometry/trait.Sampleable.html#tymethod.sample">Read more</a></p>
+</div><h4 id='method.surface_area' class="method"><span id='surface_area.v' class='invisible'><code>fn <a href='../../../tray_rust/geometry/trait.Sampleable.html#tymethod.surface_area' class='fnname'>surface_area</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/tray_rust/geometry/rectangle.rs.html#85-87' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Compute the sphere's surface area</p>
+</div><h4 id='method.pdf' class="method"><span id='pdf.v' class='invisible'><code>fn <a href='../../../tray_rust/geometry/trait.Sampleable.html#tymethod.pdf' class='fnname'>pdf</a>(&amp;self, p: &amp;<a class="struct" href="../../../tray_rust/linalg/point/struct.Point.html" title="struct tray_rust::linalg::point::Point">Point</a>, w_i: &amp;<a class="struct" href="../../../tray_rust/linalg/vector/struct.Vector.html" title="struct tray_rust::linalg::vector::Vector">Vector</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/tray_rust/geometry/rectangle.rs.html#91-104' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Compute the PDF that the ray from <code>p</code> with direction <code>w_i</code> intersects
+the shape. This is the same as disk for computing PDF, we just use the
+rectangle's surface area instead</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt><kbd>?</kbd></dt>
+                    <dd>Show this help dialog</dd>
+                    <dt><kbd>S</kbd></dt>
+                    <dd>Focus the search field</dd>
+                    <dt><kbd>↑</kbd></dt>
+                    <dd>Move up in search results</dd>
+                    <dt><kbd>↓</kbd></dt>
+                    <dd>Move down in search results</dd>
+                    <dt><kbd>↹</kbd></dt>
+                    <dd>Switch tab</dd>
+                    <dt><kbd>&#9166;</kbd></dt>
+                    <dd>Go to active search result</dd>
+                    <dt><kbd>+</kbd></dt>
+                    <dd>Expand all sections</dd>
+                    <dt><kbd>-</kbd></dt>
+                    <dd>Collapse all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../../";
+        window.currentCrate = "tray_rust";
+    </script>
+    <script src="../../../main.js"></script>
+    <script defer src="../../../search-index.js"></script>
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `QRDecomposition` struct in crate `la`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, QRDecomposition">
+
+    <title>la::QRDecomposition - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../rustdoc.css" id="mainThemeStyle">
+    
+    <link rel="stylesheet" type="text/css" href="../dark.css">
+    <link rel="stylesheet" type="text/css" href="../main.css" id="themeStyle">
+    <script src="../storage.js"></script>
+    
+
+    
+    
+</head>
+<body class="rustdoc struct">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        <div class="sidebar-menu">&#9776;</div>
+        
+        <p class='location'>Struct QRDecomposition</p><div class="sidebar-elems"><div class="block items"><a class="sidebar-title" href="#methods">Methods</a><div class="sidebar-links"><a href="#method.new">new</a><a href="#method.is_full_rank">is_full_rank</a><a href="#method.get_h">get_h</a><a href="#method.get_r">get_r</a><a href="#method.get_q">get_q</a><a href="#method.solve">solve</a></div></div><p class='location'><a href='index.html'>la</a></p><script>window.sidebarCurrent = {name: 'QRDecomposition', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script></div>
+    </nav>
+
+    <div class="theme-picker">
+        <button id="theme-picker" aria-label="Pick another theme!">
+            <img src="../brush.svg" width="18" alt="Pick another theme!">
+        </button>
+        <div id="theme-choices"></div>
+    </div>
+    <script src="../theme.js"></script>
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='index.html'>la</a>::<wbr><a class="struct" href=''>QRDecomposition</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../src/la/decomp/qr.rs.html#20-23' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct QRDecomposition&lt;T&gt; { /* fields omitted */ }</pre><div class='docblock'><p>QR Decomposition.</p>
+<p>Based on Apache Commons Math and JAMA.</p>
+<p>For an m-by-n matrix A, the QR decomposition is an m-by-m orthogonal matrix Q
+and an m-by-n upper triangular (or trapezoidal) matrix R, so that A = Q*R.</p>
+<p>The QR decompostion always exists, even if the matrix does not have
+full rank.  The primary use of the QR decomposition is in the least
+squares solution of nonsquare systems of simultaneous linear equations.
+This will fail if is_full_rank() returns false.</p>
+</div>
+                    <h2 id='methods' class='small-section-header'>
+                      Methods<a href='#methods' class='anchor'></a>
+                    </h2>
+                <h3 id='impl' class='impl'><span class='in-band'><code>impl&lt;T:&nbsp;<a class="trait" href="../num_traits/float/trait.Float.html" title="trait num_traits::float::Float">Float</a> + <a class="trait" href="../la/trait.ApproxEq.html" title="trait la::ApproxEq">ApproxEq</a>&lt;T&gt;&gt; <a class="struct" href="../la/struct.QRDecomposition.html" title="struct la::QRDecomposition">QRDecomposition</a>&lt;T&gt;</code><a href='#impl' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/la/decomp/qr.rs.html#25-239' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new' class="method"><span id='new.v' class='invisible'><code>pub fn <a href='#method.new' class='fnname'>new</a>(m: &amp;<a class="struct" href="../la/struct.Matrix.html" title="struct la::Matrix">Matrix</a>&lt;T&gt;) -&gt; <a class="struct" href="../la/struct.QRDecomposition.html" title="struct la::QRDecomposition">QRDecomposition</a>&lt;T&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/la/decomp/qr.rs.html#26-43' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.is_full_rank' class="method"><span id='is_full_rank.v' class='invisible'><code>pub fn <a href='#method.is_full_rank' class='fnname'>is_full_rank</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/la/decomp/qr.rs.html#108-115' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.get_h' class="method"><span id='get_h.v' class='invisible'><code>pub fn <a href='#method.get_h' class='fnname'>get_h</a>(&amp;self) -&gt; <a class="struct" href="../la/struct.Matrix.html" title="struct la::Matrix">Matrix</a>&lt;T&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/la/decomp/qr.rs.html#119-132' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.get_r' class="method"><span id='get_r.v' class='invisible'><code>pub fn <a href='#method.get_r' class='fnname'>get_r</a>(&amp;self) -&gt; <a class="struct" href="../la/struct.Matrix.html" title="struct la::Matrix">Matrix</a>&lt;T&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/la/decomp/qr.rs.html#135-148' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.get_q' class="method"><span id='get_q.v' class='invisible'><code>pub fn <a href='#method.get_q' class='fnname'>get_q</a>(&amp;self) -&gt; <a class="struct" href="../la/struct.Matrix.html" title="struct la::Matrix">Matrix</a>&lt;T&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/la/decomp/qr.rs.html#151-194' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.solve' class="method"><span id='solve.v' class='invisible'><code>pub fn <a href='#method.solve' class='fnname'>solve</a>(&amp;self, b: &amp;<a class="struct" href="../la/struct.Matrix.html" title="struct la::Matrix">Matrix</a>&lt;T&gt;) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../la/struct.Matrix.html" title="struct la::Matrix">Matrix</a>&lt;T&gt;&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/la/decomp/qr.rs.html#199-238' title='goto source code'>[src]</a></span></h4>
+</div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt><kbd>?</kbd></dt>
+                    <dd>Show this help dialog</dd>
+                    <dt><kbd>S</kbd></dt>
+                    <dd>Focus the search field</dd>
+                    <dt><kbd>↑</kbd></dt>
+                    <dd>Move up in search results</dd>
+                    <dt><kbd>↓</kbd></dt>
+                    <dd>Move down in search results</dd>
+                    <dt><kbd>↹</kbd></dt>
+                    <dd>Switch tab</dd>
+                    <dt><kbd>&#9166;</kbd></dt>
+                    <dd>Go to active search result</dd>
+                    <dt><kbd>+</kbd></dt>
+                    <dd>Expand all sections</dd>
+                    <dt><kbd>-</kbd></dt>
+                    <dd>Collapse all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "la";
+    </script>
+    <script src="../main.js"></script>
+    <script defer src="../search-index.js"></script>
+</body>
+</html>
